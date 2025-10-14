@@ -19,13 +19,13 @@ WORKDIR /root
 
 # Copy Dependency Lock Files:
 COPY \
-    Makefile \
-    pyproject.toml \
-    setup.py \
-    requirements.dev.txt \
-    requirements.ja.txt \
-    requirements.notebooks.txt \
-    requirements.txt \
+    ../Makefile \
+    ../pyproject.toml \
+    ../setup.py \
+    ../requirements.dev.txt \
+    ../requirements.ja.txt \
+    ../requirements.notebooks.txt \
+    ../requirements.txt \
     /root/
 
 # Install Project Dependencies
