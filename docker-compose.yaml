@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  xtts:
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile.dev
+      args:
+        BASE: python:3.10.8-slim
+    ports:
+      - "5000:5000"
+    environment:
+      - COQUI_TOS_AGREED=1
+    volumes:
+      - ./models:/root/.local/share/tts
+    command: python3 -m TTS.server.server --host 0.0.0.0 --port 5000
+    restart: unless-stopped
